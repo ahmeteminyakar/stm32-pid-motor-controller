@@ -1,0 +1,21 @@
+# STM32CubeIDE
+.settings/
+Debug/
+Release/
+.cproject
+.project
+*.launch
+
+# Build artifacts
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+
+# Python
+__pycache__/
+*.pyc
+*.csv
