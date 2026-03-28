@@ -72,11 +72,8 @@ int main(void)
     }
 }
 
-/* Peripheral init — CubeMX generates these, shown here as reference */
-
 void SystemClock_Config(void)
 {
-    /* 180 MHz via PLL — CubeMX generates full implementation */
 }
 
 static void MX_GPIO_Init(void)
@@ -131,7 +128,7 @@ static void MX_TIM3_Init(void)
     htim3.Instance               = TIM3;
     htim3.Init.Prescaler         = 0;
     htim3.Init.CounterMode       = TIM_COUNTERMODE_UP;
-    htim3.Init.Period            = 999;     /* 20 kHz PWM @ 90 MHz APB1 */
+    htim3.Init.Period            = 999;
     htim3.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
     htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
 
@@ -150,9 +147,9 @@ static void MX_TIM6_Init(void)
     __HAL_RCC_TIM6_CLK_ENABLE();
 
     htim6.Instance               = TIM6;
-    htim6.Init.Prescaler         = 8999;    /* 90 MHz / 9000 = 10 kHz */
+    htim6.Init.Prescaler         = 8999;
     htim6.Init.CounterMode       = TIM_COUNTERMODE_UP;
-    htim6.Init.Period            = 99;      /* 10 kHz / 100 = 100 Hz */
+    htim6.Init.Period            = 99;
     htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
     HAL_TIM_Base_Init(&htim6);

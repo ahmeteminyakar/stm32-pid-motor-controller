@@ -29,12 +29,6 @@ void UART_SendTelemetry(uint32_t tick_ms, float setpoint, float rpm,
     HAL_UART_Transmit(comm_huart, (uint8_t *)buf, len, 50);
 }
 
-/*
- * Commands (newline-terminated):
- *   S<val>  set target RPM     I<val>  set Ki
- *   P<val>  set Kp             D<val>  set Kd
- *   R       reset integrator
- */
 void UART_ProcessCommand(void)
 {
     if (rx_idx == 0) return;

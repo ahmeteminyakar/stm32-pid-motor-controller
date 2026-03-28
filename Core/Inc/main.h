@@ -3,8 +3,6 @@
 
 #include "stm32f4xx_hal.h"
 
-/* Pin assignments — Nucleo-F446RE */
-
 #define ENC_TIM             TIM2
 
 #define MOTOR_TIM           TIM3
@@ -21,7 +19,7 @@
 #define PID_LOOP_HZ         100
 #define PID_DT              (1.0f / PID_LOOP_HZ)
 
-#define ENCODER_CPR         2048    /* 4x quadrature */
+#define ENCODER_CPR         2048
 
 #define DEFAULT_KP          2.0f
 #define DEFAULT_KI          0.5f

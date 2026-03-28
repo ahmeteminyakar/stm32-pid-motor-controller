@@ -29,7 +29,6 @@ float PID_Compute(PID_Controller *pid, float measurement)
 
     float output = p_term + i_term + d_term;
 
-    /* Anti-windup: back-calculate integral on saturation */
     if (output > pid->output_max) {
         output = pid->output_max;
         pid->integral -= error * pid->dt;

@@ -19,3 +19,4 @@ Release/
 __pycache__/
 *.pyc
 *.csv
+CLAUDE.md

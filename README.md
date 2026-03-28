@@ -7,9 +7,9 @@ Interrupt-driven PID speed controller for a DC motor using quadrature encoder fe
 - **PID control loop** running at 100 Hz in timer interrupt
 - **Quadrature encoder** reading via hardware timer (4x decoding)
 - **PWM output** to H-bridge motor driver with direction control
-- **UART telemetry** — real-time CSV stream of speed, setpoint, and PID parameters
-- **Runtime tuning** — change setpoint and PID gains via UART commands
-- **Python plotter** — live visualization of speed response
+- **UART telemetry**: real-time CSV stream of speed, setpoint, and PID parameters
+- **Runtime tuning**: change setpoint and PID gains via UART commands
+- **Python plotter**: live visualization of speed response
 
 ## Hardware
 
@@ -56,11 +56,11 @@ stm32-pid-motor-controller/
 4. Build and flash to the Nucleo board
 
 ### Peripheral Configuration (CubeMX)
-- **TIM2**: Encoder Mode — CH1 (PA0), CH2 (PA1)
-- **TIM3**: PWM Generation CH1 (PA6) — Period: 999, Prescaler: 0
-- **TIM6**: Basic timer — Prescaler: 8999, Period: 99 → 100 Hz interrupt
-- **USART2**: 115200 baud, 8N1 — TX (PA2), RX (PA3)
-- **PB0, PB1**: GPIO Output — H-bridge direction
+- **TIM2**: Encoder Mode, CH1 (PA0), CH2 (PA1)
+- **TIM3**: PWM Generation CH1 (PA6), Period: 999, Prescaler: 0
+- **TIM6**: Basic timer, Prescaler: 8999, Period: 99 → 100 Hz interrupt
+- **USART2**: 115200 baud, 8N1, TX (PA2), RX (PA3)
+- **PB0, PB1**: GPIO Output, H-bridge direction
 
 ## UART Telemetry
 
@@ -104,4 +104,4 @@ Displays live plots of setpoint vs actual RPM and PWM duty cycle.
 | Setpoint   | 500 RPM|
 | Loop rate  | 100 Hz |
 
-These are starting values — tune for your specific motor and load.
+These are starting values, tune for your specific motor and load.
